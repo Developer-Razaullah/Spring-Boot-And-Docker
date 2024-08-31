@@ -14,6 +14,8 @@ docker-compose.yml file or use below command
 
 => docker run -p 8080:8080 hello-world
 
+=> docker run -d -p 8080:8080 hello-world
+
 ![img_2.png](img_2.png)
 
 use below endpoint to check hello world API response
