@@ -1,6 +1,7 @@
 package com.docker.helloworldimage.service;
 
 import com.docker.helloworldimage.model.HelloWorld;
+import com.docker.helloworldimage.model.Technology;
 import com.docker.helloworldimage.repository.HelloWorldRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Service
-public class HelloWorldImpl implements HelloWorldService {
+public class CommonServiceImpl implements CommonService {
 
     @Autowired
     private HelloWorldRepository repository;
@@ -33,5 +34,10 @@ public class HelloWorldImpl implements HelloWorldService {
         helloWorld.setMessage(message);
         repository.save(helloWorld);
         return new HelloWorld(header, Collections.singletonList(message));
+    }
+
+    @Override
+    public Technology getTech(Technology technology) {
+        return technology;
     }
 }
