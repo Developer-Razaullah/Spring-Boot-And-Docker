@@ -40,4 +40,12 @@ public class CommonServiceImpl implements CommonService {
     public Technology getTech(Technology technology) {
         return technology;
     }
+
+    @Override
+    public HelloWorld getData(int id) {
+        if (id >= 0) {
+            return new HelloWorld(String.valueOf(id), List.of("Hello Coder"));
+        }
+        return null;
+    }
 }

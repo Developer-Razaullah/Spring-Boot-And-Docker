@@ -25,6 +25,11 @@ public class CommonController {
         return new ResponseEntity<>(service.getMessage(header), HttpStatus.OK);
     }
 
+    @GetMapping("/message/{id}")
+    public ResponseEntity<HelloWorld> message(@PathVariable("id") int id) {
+        return new ResponseEntity<>(service.getData(id), HttpStatus.OK);
+    }
+
     @PostMapping("/add/message")
     public ResponseEntity<HelloWorld> add(@RequestParam("X-Request-Id") String header, @RequestParam("data") String message) {
         return new ResponseEntity<>(service.getMessages(header,message), HttpStatus.CREATED);
